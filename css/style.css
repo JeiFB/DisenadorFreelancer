@@ -6,34 +6,71 @@
     --gris: #757575;
 }   
 
-
+/* Globales */
 html{
     font-size: 62.5%;
+    box-sizing: border-box; /*hack para box model*/
     
 }
 
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 body{
-    font-size: 16px;
+    font-size: 16px; /*1rem = 10px*/
     font-family: 'Krub', sans-serif;
 }
 
-.titulo{
-    text-align: center;
-    font-size: 3.8rem;
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
 }
 
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco); /*  para el color de la letra*/
+    text-decoration: none; /*quitar raya de los textos*/
+    padding: 1rem 3rem ; /*relleno del boton*/
+    border-radius: .5rem; /*sirve para los bordes*/
+    text-decoration: uppercase; /*poner letra en mayusculas*/
+    font-weight: bold; /*Texto mas en negrita*/
+    width: 90%; /*para que el boton llege hasta las orillas (para dispositivos mobiles)*/
+    text-align: center; /*para centrar el texto del boton*/
+    margin-top: 3rem; /*mover el bloque*/
+}
 
+.boton:hover{ /* hover sirve para cuando el curso se posesione en el boton y realize un evento, en este seria que el fondo cambie de color*/
+    background-color: var(--primario);
+}
+
+@media (min-width: 760px) {
+    .boton{
+        width: auto; /*auto para resetear y se vea pequeqño el boton en escritorio*/
+    }
+}
+
+/* Tipografia */
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+
+h1,h2,h3{
+    text-align: center;
+}
 .titulo span{
     font-size: 2rem;    
 }
 
-.contenedor{
-
-    max-width: 120rem;
-    margin: 0 auto;
-}
+/* Navegacion principal */
 .nav-bg{
-    background-color: var(--secundario);
+    background-color: var(--secundario); /*para que la barra de navegacion se de color azul*/
 }
 .navegacion-principal{
     display: flex;
@@ -51,7 +88,7 @@ body{
     display: block;
     text-align: center;
     padding: 1rem;
-    color:var(-blanco);
+    color:var(--blanco);
     text-decoration: none;
     font-size: 2rem;
     font-weight: 400;
@@ -62,10 +99,28 @@ body{
     background-color: var(--primario);
 }
 
-a:visited{
-    color: #ffffff;
+
+/* Contenido hero */
+.hero{
+    background-image: url(/img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 440px;
+    position: relative;
 }
 
-@media (min-width: ) {
-   
+.contenido-hero{
+    position: absolute;
+    background-color: rgb(0, 0, 0, .7);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido p{
+    color: var(--blanco);
 }
